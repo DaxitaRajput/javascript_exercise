@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Game</h2>
+Enter No. of Person in Game: <input type="text" id="persons"/>
+<button type="submit" id="submit" onclick="get_result_game();">Submit</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function get_result_game(){
+		var array = [];
+		var no_of_persons = document.getElementById("persons").value;
+		
+		for(var i=1;i<=no_of_persons;i++){
+			array.push(i);
+		}
+
+		for(var j=0;j<no_of_persons;j++){
+			subarr = array.splice(0,3);
+			subarr.pop();
+		//	console.log("subarray : "+subarr)
+			for(var k=0;k<subarr.length;k++){
+				array.push(subarr[k])
+		//		console.log("array : "+array);
+				document.getElementById("demo").innerHTML = array+" Numbered person is winner";
+			}
+
+		}
+		
+	}
+</script>
+</body>
+</html>

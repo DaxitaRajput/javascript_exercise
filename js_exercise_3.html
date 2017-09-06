@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Word occurence in sentence</h2>
+Enter Sentence : <input id="sentence">
+
+<br/>
+
+<button type="submit" onclick="wordFreq();">Submit</button>
+<p id="demo"></p>
+
+<script>
+
+function wordFreq() {
+	string = document.getElementById("sentence").value;
+    // var words = string.replace(/[.]/g, '').split(/\s/);
+    var words = string.split(' ');
+    var freqMap = {};
+
+    for (var i=0; i<words.length;i++){
+    	if (!freqMap[words[i]]) {
+            freqMap[words[i]] = 0;
+        }
+        freqMap[words[i]] += 1;
+    }
+    console.log(freqMap)
+    document.getElementById("demo").innerHTML = JSON.stringify(freqMap);
+}
+
+</script>
+
+</body>
+</html>

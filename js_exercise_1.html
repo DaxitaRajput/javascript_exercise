@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculator</h2>
+First number : <input id="a">
+Second number : <input id="b">
+<br/>
+<button type="submit" onclick="add();">Addition</button>
+<button type="submit" onclick="sub();">Subtraction</button>
+<button type="submit" onclick="mul();">Multiplication</button>
+<button type="submit" onclick="division();">Division</button>
+<p id="demo"></p>
+
+<script>
+	
+	function get_data(){
+		a1 = parseInt(document.getElementById("a").value);
+		b1 = parseInt(document.getElementById("b").value);
+	}
+	
+    
+	function validate(){
+		text = "Input not valid";
+        document.getElementById("demo").innerHTML = text;
+	}
+	function add(){
+		get_data();
+		if (isNaN(a1) || isNaN(b1)) {
+        	validate();
+    	}
+    	else{
+		document.getElementById("demo").innerHTML = a1+b1;}
+	}
+
+	function sub(){
+		get_data();
+		if (isNaN(a1) || isNaN(b1)) {
+        	validate();
+    }else{
+		document.getElementById("demo").innerHTML = a1-b1;
+    }
+	}
+
+	function mul(){
+		get_data();
+		if (isNaN(a1) || isNaN(b1)) {
+        	validate();
+    }else{
+		document.getElementById("demo").innerHTML = a1*b1;
+    }
+	}
+
+	function division(){
+		get_data();
+		if (isNaN(a1) || isNaN(b1)) {
+        	validate();
+    }else{
+		document.getElementById("demo").innerHTML = a1/b1;
+    }
+	}
+
+</script>
+
+</body>
+</html>

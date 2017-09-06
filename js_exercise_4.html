@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>User Form</h2>
+<form>
+Enter First Name : <input id="first_name" pattern="[A-Za-z]{3,}" required><br/><br/>
+Enter Last Name : <input id="last_name" required><br/><br/>
+Enter Email ID : <input type="email" id="email" onblur="validate_email();" required><span id="errorname"></span><br/><br/>
+Enter UserID : <input id="user_id" required onkeydown="validate_userid();"><span id="alertmsg"></span><br/><br/>
+Enter Password : <input type="password" pattern="[A-Za-z0-9@!#$%^&*()_-]{6,}" id="password1" required onkeydown="validate_password();"><span id="error" style="color:red">   password length should be 6 or more</span><br/><br/>
+Enter Confirm Password : <input type="password" id="password2" required onkeydown="validate_password();"><span id="errormsg"></span><br/><br/>
+
+<input type="submit" id="submit" disabled/>
+<p id="demo" style="color: red;"></p>
+</form>
+
+<script type="text/javascript">
+
+	function validate_email() {
+        var email_id;
+
+        email_id = document.getElementById("email");
+
+            // var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            var reg = /^([a-z0-9_\.\-])+\@(([a-z0-9\-])+\.)+([a-z0-9]{2,4})+$/;
+
+		    if (!reg.test(email_id.value)) {
+		    document.getElementById("errorname").style.color = "red";
+		    document.getElementById("errorname").innerHTML ="Invalid Email Address "+ email_id.value;
+		    return false;
+		    }
+        else{
+            document.getElementById("errorname").innerHTML ="";
+        }
+  }
+
+
+  function validate_userid() {
+        var userid;
+
+        userid = document.getElementById("user_id");
+        var reg = /[a-zA-Z0-9_@$#!~%&]{4,}/;
+
+        if (!reg.test(userid.value)) {
+        document.getElementById("alertmsg").style.color = "red";
+        document.getElementById("alertmsg").innerHTML ="its length should be 4 or more than 4(including only letters, numbers and ~!@#$%_&)";
+       
+        }
+        else{
+                 
+            document.getElementById("alertmsg").innerHTML ="";
+            }
+    }
+
+
+
+    function validate_password() {
+      if (document.getElementById('password1').value !=
+                document.getElementById('password2').value) 
+        {
+            document.getElementById("errormsg").style.color = "red";
+          document.getElementById("errormsg").innerHTML = "password is not same as above password";
+            document.getElementById('submit').disabled = true;
+        }
+
+      if (document.getElementById('password1').value.length >=6 )
+      {
+        document.getElementById("error").style.color = "green";
+        document.getElementById("error").innerHTML = "It's strong password";
+        if (document.getElementById('password1').value ==
+                document.getElementById('password2').value)
+        {
+            document.getElementById('submit').disabled = false;
+          
+        } 
+        
+      }
+      if(!document.getElementById('submit').disabled){
+        document.getElementById("errormsg").innerHTML = "";
+      }
+}
+
+</script>
+</body>
+</html>
+
