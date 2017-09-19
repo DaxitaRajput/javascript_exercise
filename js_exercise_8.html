@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3 id="demo"></h3>
+<script>
+var string = prompt("Enter String to find number of vowels : ");
+var array = [];
+var count = 0;
+for(var i=0;i<string.length;i++){
+    array.push(string[i]);
+}
+console.log(array);
+for (var j=0;j<array.length;j++){
+	if (array[j]=="a" || array[j]=="e" || array[j]=="i" || array[j]=="o" || array[j]=="u"){
+		count += 1;
+	}
+}
+document.getElementById("demo").innerHTML = "Number of Vowels in string "+ string +" is : "+count;
+</script>
+
+</body>
+</html>

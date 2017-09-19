@@ -1,0 +1,45 @@
+<html>
+<head>
+
+</head>
+<body>
+<div id="demo"></div>
+</body>
+<script>
+function randomIntFromInterval(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+    var object,avg;
+    for(var i=30;i<40;i++)
+    {
+        object = { 'Name' : "User"+i,'English':i+randomIntFromInterval(5,59),'Maths':i+randomIntFromInterval(5,59),'Science':i+randomIntFromInterval(5,59) };
+        avg = (object.English + object.Maths + object.Science)/3;
+        console.log(object.Name+"  "+object.Maths+" "+object.Science+" "+ object.English+" Avg = "+avg);
+        if(avg>90)
+        {
+            document.getElementById("demo").innerHTML=document.getElementById("demo").innerHTML +'<b>Name : '+object.Name+'</b><br/>'+'Avg : '+avg+'<br/>'+"<b>A Grade</b>"+'<br/><br/>';
+        }
+        else if(avg>80)
+        {
+            document.getElementById("demo").innerHTML=document.getElementById("demo").innerHTML +'<b>Name : '+object.Name+'</b><br/>'+'Avg : '+avg+'<br/>'+"<b>B Grade</b>"+'<br/><br/>';
+        }
+        else if(avg>70)
+        {
+            document.getElementById("demo").innerHTML=document.getElementById("demo").innerHTML +'<b>Name : '+object.Name+'</b><br/>'+'Avg : '+avg+'<br/>'+"<b>C Grade"+'</b><br/><br/>';
+        }
+        else if(avg>60)
+        {
+            document.getElementById("demo").innerHTML=document.getElementById("demo").innerHTML +'<b>Name : '+object.Name+'</b><br/>'+'Avg : '+avg+'<br/>'+"<b>D Grade</b>"+'<br/><br/>';
+        }
+        else if(avg<35)
+        {
+            document.getElementById("demo").innerHTML=document.getElementById("demo").innerHTML +'<b>Name : '+object.Name+'</b><br/>'+'Avg : '+avg+'<br/>'+"<b>Fail</b>"+'<br/><br/>';
+        }
+        else
+        {
+            document.getElementById("demo").innerHTML=document.getElementById("demo").innerHTML +'<b>Name : '+object.Name+'</b><br/>'+'Avg : '+avg+'<br/>'+"Average is between 35 to 60 and no condition is provided for that"+'<br/><br/>';
+        }
+    }
+</script>
+</html>

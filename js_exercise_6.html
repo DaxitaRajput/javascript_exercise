@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<h2>Bubble Sort</h2>
+<p id="values">
+
+<br/>
+<br/>
+<button type="submit" onclick="bubbleSort();">Get sort</button>
+<p id="demo"></p>
+
+<script>
+function bubbleSort(){
+  var a = [-1,0,-67,0.65,-0.43,2,3,2,71,2,79,3,61,4,64,43,21,12,2,34,56,78];
+  // console.log(Array.from(a));
+  document.getElementById("values").innerHTML = "Values are : "+a;
+  var arrayX = Array.from(new Set(a));
+  console.log("a=",typeof arrayX);
+  for (i = 0; i <= arrayX.length-1; i++)
+  {
+    if (arrayX[i] > arrayX[i+1])
+      {
+        temp = arrayX[i+1];
+        arrayX[i+1] = arrayX[i];
+        arrayX[i] = temp;
+        i = i-2;
+      }
+  }
+  console.log(arrayX);
+  document.getElementById("demo").innerHTML = "Sorted array is : "+arrayX;
+}
+
+</script>
+
+</body>
+</html>
+

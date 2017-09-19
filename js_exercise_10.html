@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Find Max</h2>
+Enter First Number : <input id="first_number">
+Enter Second Number : <input id="second_number">
+
+<br/>
+
+<button type="submit" onclick="get_max();">Submit</button>
+<p id="demo"></p>
+
+<script>
+function get_max(){
+	num1 = document.getElementById("first_number").value;
+	num2 = document.getElementById("second_number").value;
+	console.log(typeof num1,typeof num2);
+	if(parseInt(num1,10) > parseInt(num2, 10)) 
+  { 
+  document.getElementById("demo").innerHTML = "The larger is "+ num1+ " in "+ num2+ " and "+ num1+ ".";
+  } 
+  else if(parseInt(num2, 10) > parseInt(num1, 10)) 
+  {
+  document.getElementById("demo").innerHTML = "The larger is "+ num2+" in "+ num2+ " and "+ num1+ ".";
+  }                  
+  else if(parseInt(num2, 10) == parseInt(num1, 10))
+  {
+   document.getElementById("demo").innerHTML = "The values "+ num1+ " and "+num2+ " are equal.";
+  }
+  else if(isNaN(num2) && isNaN(num1))
+  {
+  	document.getElementById("demo").innerHTML = "Please enter Number input";
+  }
+  else
+  {
+  	document.getElementById("demo").innerHTML = "Please enter valid input";	
+  }
+}
+</script>
+
+</body>
+</html>

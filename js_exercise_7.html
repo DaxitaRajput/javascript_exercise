@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="image" src="http://cdn2.stylecraze.com/wp-content/uploads/2013/07/6910_50-Most-Beautiful-Flowers-In-The-World.jpg" width="900" height="900">
+
+<script>
+var imgArray = ['https://static.pexels.com/photos/169193/pexels-photo-169193.jpeg','https://static.pexels.com/photos/87452/flowers-background-butterflies-beautiful-87452.jpeg','https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg','https://static.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg','https://static.pexels.com/photos/207962/pexels-photo-207962.jpeg','https://static.pexels.com/photos/54630/japanese-cherry-trees-flowers-spring-japanese-flowering-cherry-54630.jpeg','https://static.pexels.com/photos/40797/wild-flowers-flowers-plant-macro-40797.jpeg','https://static.pexels.com/photos/46216/sunflower-flowers-bright-yellow-46216.jpeg'];
+
+    var rand = imgArray[Math.floor(Math.random() * imgArray.length)];
+    console.log(rand);
+	document.getElementById("image").src = rand;
+</script>
+
+</body>
+</html>

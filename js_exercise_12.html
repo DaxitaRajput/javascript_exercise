@@ -1,0 +1,32 @@
+<html>
+<head>
+
+</head>
+<body>
+Enter any Number to find its ArmStrong or not: <input id="number">
+<button onclick="ArmStrong()">Check</button></br></br>
+<div id="demo"></div>
+</body>
+<script>
+function ArmStrong()
+{
+var arm=0,no,num;
+num=Number(document.getElementById("number").value);
+temp=num;
+while(temp>0)
+{
+no=temp%10;
+temp=parseInt(temp/10);
+arm=arm+no*no*no;
+}
+if(arm==num)
+{
+document.getElementById("demo").innerHTML=num+" is Armstrong number";
+}
+else
+{
+document.getElementById("demo").innerHTML=num+" is not Armstrong number";
+}
+}
+</script>
+</html>
